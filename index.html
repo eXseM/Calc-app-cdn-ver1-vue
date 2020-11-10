@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./style/style.css">
+	<title>VueCalc</title>
+</head>
+<body>
+
+	<div id="app">
+		
+		<div class="grid">
+			<!-- Табло -->
+			<input @keyup.enter='calc()' type="text" v-model="result" placeholder="0">
+			<!-- Присваиваем кнопке функцию из methods и передаем параметр (num/числа) -->
+			<button @click="input(num)" class="cell num" v-for="num in numbers">{{num}}</button>
+			<!-- Присваиваем кнопке функцию из methods и передаем параметр (op/действие) -->
+			<button @click="input(op)" class="cell op" v-for="op in operations">{{op}}</button>
+			<!-- Очистка -->
+			<button @click="reset()" class="cell op">R</button>
+			<button @click='calc()' class="cell op">=</button>
+		</div>
+
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
